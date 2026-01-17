@@ -1,15 +1,12 @@
-/* eslint-disable @next/next/no-img-element */
 import BlurFade from "@/components/magicui/blur-fade";
 import BlurFadeText from "@/components/magicui/blur-fade-text";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { DATA } from "@/data/resume";
 import Link from "next/link";
 import Markdown from "react-markdown";
 import ContactSection from "@/components/section/contact-section";
-import HackathonsSection from "@/components/section/hackathons-section";
 import ProjectsSection from "@/components/section/projects-section";
 import WorkSection from "@/components/section/work-section";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, FileDown } from "lucide-react";
 
 const BLUR_FADE_DELAY = 0.04;
 
@@ -18,25 +15,39 @@ export default function Page() {
     <main className="min-h-dvh flex flex-col gap-14 relative">
       <section id="hero">
         <div className="mx-auto w-full max-w-2xl space-y-8">
-          <div className="gap-2 gap-y-6 flex flex-col md:flex-row justify-between">
-            <div className="gap-2 flex flex-col order-2 md:order-1">
-              <BlurFadeText
-                delay={BLUR_FADE_DELAY}
-                className="text-3xl font-semibold tracking-tighter sm:text-4xl lg:text-5xl"
-                yOffset={8}
-                text={`Hi, I'm ${DATA.name.split(" ")[0]}`}
-              />
-              <BlurFadeText
-                className="text-muted-foreground max-w-[600px] md:text-lg lg:text-xl"
-                delay={BLUR_FADE_DELAY}
-                text={DATA.description}
-              />
-            </div>
-            <BlurFade delay={BLUR_FADE_DELAY} className="order-1 md:order-2">
-              <Avatar className="size-24 md:size-32 border rounded-full shadow-lg ring-4 ring-muted">
-                <AvatarImage alt={DATA.name} src={DATA.avatarUrl} />
-                <AvatarFallback>{DATA.initials}</AvatarFallback>
-              </Avatar>
+          <div className="gap-2 gap-y-4 flex flex-col">
+            <BlurFadeText
+              delay={BLUR_FADE_DELAY}
+              className="text-3xl font-semibold tracking-tighter sm:text-4xl lg:text-5xl"
+              yOffset={8}
+              text={`Hi, I'm ${DATA.name.split(" ")[0]}`}
+            />
+            <BlurFadeText
+              className="text-muted-foreground max-w-[600px] md:text-lg lg:text-xl"
+              delay={BLUR_FADE_DELAY}
+              text={DATA.description}
+            />
+            <BlurFade delay={BLUR_FADE_DELAY * 2}>
+              <p className="text-sm text-muted-foreground">
+                Director of Operations at Raina Music. Previously Music Supervisor. NYU grad.
+              </p>
+            </BlurFade>
+            <BlurFade delay={BLUR_FADE_DELAY * 2.5}>
+              <div className="flex gap-3 mt-2">
+                <a
+                  href="#projects"
+                  className="inline-flex items-center justify-center rounded-lg bg-primary text-primary-foreground px-4 py-2 text-sm font-medium hover:bg-primary/90 transition-colors"
+                >
+                  View Case Studies
+                </a>
+                <a
+                  href="/resume.pdf"
+                  className="inline-flex items-center justify-center gap-2 rounded-lg border border-border px-4 py-2 text-sm font-medium hover:bg-muted transition-colors"
+                >
+                  <FileDown className="size-4" />
+                  Resume
+                </a>
+              </div>
             </BlurFade>
           </div>
         </div>
@@ -51,6 +62,15 @@ export default function Page() {
               <Markdown>
                 {DATA.summary}
               </Markdown>
+            </div>
+          </BlurFade>
+          <BlurFade delay={BLUR_FADE_DELAY * 4.5}>
+            <div className="mt-4 p-4 rounded-lg border border-border bg-muted/30">
+              <p className="text-sm text-muted-foreground">
+                <span className="text-foreground font-medium">Looking for:</span> Roles where I can
+                combine product thinking, technical building, and operational excellence. PM, Solutions
+                Architect, Product Ops, or Chief of Staff positions where building is as important as managing.
+              </p>
             </div>
           </BlurFade>
         </div>
@@ -83,15 +103,9 @@ export default function Page() {
                   className="flex items-center gap-x-3 justify-between group"
                 >
                   <div className="flex items-center gap-x-3 flex-1 min-w-0">
-                    {education.logoUrl ? (
-                      <img
-                        src={education.logoUrl}
-                        alt={education.school}
-                        className="size-8 md:size-10 p-1 border rounded-full shadow ring-2 ring-border overflow-hidden object-contain flex-none"
-                      />
-                    ) : (
-                      <div className="size-8 md:size-10 p-1 border rounded-full shadow ring-2 ring-border bg-muted flex-none" />
-                    )}
+                    <div className="size-8 md:size-10 p-1 border rounded-full shadow ring-2 ring-border bg-muted flex-none flex items-center justify-center text-xs font-semibold">
+                      NYU
+                    </div>
                     <div className="flex-1 min-w-0 flex flex-col gap-0.5">
                       <div className="font-semibold leading-none flex items-center gap-2">
                         {education.school}
@@ -99,6 +113,9 @@ export default function Page() {
                       </div>
                       <div className="font-sans text-sm text-muted-foreground">
                         {education.degree}
+                      </div>
+                      <div className="font-sans text-xs text-muted-foreground">
+                        Minor in Business, Entertainment, Media & Technology
                       </div>
                     </div>
                   </div>
@@ -135,13 +152,8 @@ export default function Page() {
           <ProjectsSection />
         </BlurFade>
       </section>
-      <section id="hackathons">
-        <BlurFade delay={BLUR_FADE_DELAY * 13}>
-          <HackathonsSection />
-        </BlurFade>
-      </section>
       <section id="contact">
-        <BlurFade delay={BLUR_FADE_DELAY * 16}>
+        <BlurFade delay={BLUR_FADE_DELAY * 13}>
           <ContactSection />
         </BlurFade>
       </section>
