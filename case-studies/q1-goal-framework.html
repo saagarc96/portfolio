@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q1 Goal Framework | Saagar Chandiramani</title>
+    <meta name="description" content="Applied Molly Graham's goal-setting framework to align a distributed team around 3 measurable goals.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                fontFamily: { sans: ['Inter', 'sans-serif'] },
+                extend: { colors: { background: '#09090b', surface: '#18181b', border: '#27272a' } }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #09090b; color: #e4e4e7; -webkit-font-smoothing: antialiased; }
+        .glass-card { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); }
+    </style>
+</head>
+<body class="antialiased min-h-screen">
+    <main class="max-w-3xl mx-auto px-6 py-16">
+        <!-- Back Link -->
+        <a href="../index.html#section-2" class="inline-flex items-center gap-2 text-sm text-gray-400 hover:text-white transition-colors mb-12">
+            <i data-lucide="arrow-left" class="w-4 h-4"></i>
+            Back to projects
+        </a>
+
+        <!-- Header -->
+        <header class="mb-12">
+            <div class="flex items-center gap-3 mb-4">
+                <span class="text-sm text-gray-500 font-mono">2026</span>
+                <span class="px-2 py-0.5 text-xs bg-blue-500/20 text-blue-400 rounded-full">3 measurable goals</span>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-semibold tracking-tight text-white mb-4">
+                Q1 Goal Framework
+            </h1>
+            <p class="text-xl text-gray-400">
+                Applied Molly Graham's goal-setting framework to align a distributed team around 3 measurable goals.
+            </p>
+        </header>
+
+        <!-- Problem -->
+        <section class="mb-12">
+            <h2 class="text-xl font-semibold text-white mb-4">Problem</h2>
+            <ul class="space-y-3 text-gray-400">
+                <li class="flex items-start gap-3">
+                    <span class="text-gray-600 mt-1.5">-</span>
+                    Ambitious targets ($400k pipeline) without clear ownership or accountability
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="text-gray-600 mt-1.5">-</span>
+                    Multiple priorities competing for attention across a distributed team
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="text-gray-600 mt-1.5">-</span>
+                    No checkpoint accountability - goals set at quarter start, reviewed at quarter end
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="text-gray-600 mt-1.5">-</span>
+                    Team members unclear on what to prioritize when everything feels urgent
+                </li>
+            </ul>
+        </section>
+
+        <!-- Solution -->
+        <section class="mb-12">
+            <h2 class="text-xl font-semibold text-white mb-4">Solution</h2>
+            <p class="text-gray-400 mb-6">
+                Applied Molly Graham's goal-setting framework (from her work at Facebook, Quip, and Chan Zuckerberg Initiative) to create clear, achievable goals with explicit ownership.
+            </p>
+            <ul class="space-y-3 text-gray-400">
+                <li class="flex items-start gap-3">
+                    <span class="text-gray-600 mt-1.5">-</span>
+                    <span><strong class="text-gray-200">Simplified targets:</strong> Reduced from $400k to $200k pipeline target based on realistic assessment</span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="text-gray-600 mt-1.5">-</span>
+                    <span><strong class="text-gray-200">3 parallel goals:</strong> Each with explicit owner and monthly checkpoints</span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="text-gray-600 mt-1.5">-</span>
+                    <span><strong class="text-gray-200">"Not doing" list:</strong> Explicitly scoped out distractions to maintain focus</span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="text-gray-600 mt-1.5">-</span>
+                    <span><strong class="text-gray-200">Weekly pipeline review:</strong> Built accountability into the operating rhythm</span>
+                </li>
+            </ul>
+        </section>
+
+        <!-- The Three Goals -->
+        <section class="mb-12">
+            <h2 class="text-xl font-semibold text-white mb-6">The Three Goals</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="glass-card rounded-xl p-5">
+                    <p class="text-xs text-gray-500 mb-2">Goal 1</p>
+                    <p class="text-lg font-medium text-white mb-1">Pipeline</p>
+                    <p class="text-sm text-gray-400 mb-3">$200k new pipeline</p>
+                    <p class="text-xs text-gray-600">Owner: Vikas (CEO)</p>
+                </div>
+                <div class="glass-card rounded-xl p-5">
+                    <p class="text-xs text-gray-500 mb-2">Goal 2</p>
+                    <p class="text-lg font-medium text-white mb-1">Migration</p>
+                    <p class="text-sm text-gray-400 mb-3">Complete platform migration</p>
+                    <p class="text-xs text-gray-600">Owner: Michaela (CS Lead)</p>
+                </div>
+                <div class="glass-card rounded-xl p-5">
+                    <p class="text-xs text-gray-500 mb-2">Goal 3</p>
+                    <p class="text-lg font-medium text-white mb-1">Outbound</p>
+                    <p class="text-sm text-gray-400 mb-3">Build outbound engine</p>
+                    <p class="text-xs text-gray-600">Owner: Saagar (Ops)</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Impact -->
+        <section class="mb-12">
+            <h2 class="text-xl font-semibold text-white mb-4">Impact</h2>
+            <ul class="space-y-3 text-gray-400">
+                <li class="flex items-start gap-3">
+                    <span class="text-gray-600 mt-1.5">-</span>
+                    <span><strong class="text-gray-200">Team alignment:</strong> Everyone knows what matters (and what doesn't)</span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="text-gray-600 mt-1.5">-</span>
+                    <span><strong class="text-gray-200">Clear ownership:</strong> No ambiguity about who's responsible for what</span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="text-gray-600 mt-1.5">-</span>
+                    <span><strong class="text-gray-200">Checkpoint accountability:</strong> Monthly reviews built into the rhythm</span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="text-gray-600 mt-1.5">-</span>
+                    <span><strong class="text-gray-200">Focus protection:</strong> "Not doing" list prevents scope creep</span>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Framework Principles -->
+        <section class="mb-12">
+            <h2 class="text-xl font-semibold text-white mb-4">Framework Principles</h2>
+            <ul class="space-y-3 text-gray-400">
+                <li class="flex items-start gap-3">
+                    <span class="text-gray-600 mt-1.5">-</span>
+                    <span><strong class="text-gray-200">Fewer goals:</strong> 3 goals maximum - if everything is a priority, nothing is</span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="text-gray-600 mt-1.5">-</span>
+                    <span><strong class="text-gray-200">Reality-based:</strong> Set achievable targets, not aspirational fantasies</span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="text-gray-600 mt-1.5">-</span>
+                    <span><strong class="text-gray-200">Explicit ownership:</strong> One person responsible for each goal</span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="text-gray-600 mt-1.5">-</span>
+                    <span><strong class="text-gray-200">Built-in checkpoints:</strong> Monthly reviews, not just quarterly retros</span>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Skills -->
+        <section>
+            <h2 class="text-xl font-semibold text-white mb-4">Skills Applied</h2>
+            <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1.5 rounded-md border text-xs bg-gray-900 border-gray-800 text-gray-400">Strategic Planning</span>
+                <span class="px-3 py-1.5 rounded-md border text-xs bg-gray-900 border-gray-800 text-gray-400">OKRs</span>
+                <span class="px-3 py-1.5 rounded-md border text-xs bg-gray-900 border-gray-800 text-gray-400">Team Alignment</span>
+                <span class="px-3 py-1.5 rounded-md border text-xs bg-gray-900 border-gray-800 text-gray-400">Change Management</span>
+                <span class="px-3 py-1.5 rounded-md border text-xs bg-gray-900 border-gray-800 text-gray-400">Stakeholder Communication</span>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        lucide.createIcons({ attrs: { 'stroke-width': 1.5 } });
+    </script>
+</body>
+</html>

@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saagar Chandiramani | Operations Leader</title>
+    <meta name="description" content="Operations leader who builds AI-powered systems that scale human judgment. Director of Operations at Raina Music.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                fontFamily: {
+                    sans: ['Inter', 'sans-serif'],
+                },
+                extend: {
+                    colors: {
+                        background: '#09090b',
+                        surface: '#18181b',
+                        border: '#27272a',
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #09090b;
+            color: #e4e4e7;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+        .scroll-container {
+            height: 100vh;
+            overflow-y: scroll;
+            scroll-snap-type: y mandatory;
+            scroll-behavior: smooth;
+        }
+
+        section {
+            scroll-snap-align: start;
+            scroll-snap-stop: always;
+            position: relative;
+        }
+
+        .bg-grid {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.3s ease;
+        }
+        .glass-card:hover {
+            background: rgba(255, 255, 255, 0.06);
+            border-color: rgba(255, 255, 255, 0.15);
+            transform: translateY(-2px);
+        }
+
+        @keyframes animationIn {
+            0% { opacity: 0; transform: translateY(20px); filter: blur(4px); }
+            100% { opacity: 1; transform: translateY(0); filter: blur(0px); }
+        }
+        .animate-on-scroll { opacity: 0; }
+        .animate-on-scroll.animate { animation: animationIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+
+        .delay-100 { animation-delay: 100ms; }
+        .delay-200 { animation-delay: 200ms; }
+        .delay-300 { animation-delay: 300ms; }
+
+        .nav-dot { width: 6px; height: 6px; transition: all 0.4s ease; }
+        .nav-dot.active { height: 24px; background-color: white; box-shadow: 0 0 12px rgba(255,255,255,0.3); }
+
+        .btn-primary {
+            background: #ffffff;
+            color: #000000;
+            transition: all 0.2s ease;
+        }
+        .btn-primary:hover {
+            background: #e4e4e7;
+            transform: translateY(-1px);
+        }
+        .btn-secondary {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            color: #ffffff;
+            transition: all 0.2s ease;
+        }
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: rgba(255,255,255,0.2);
+        }
+
+        .timeline-line::before {
+            content: '';
+            position: absolute;
+            top: 8px;
+            bottom: 0;
+            left: 7px;
+            width: 1px;
+            background: linear-gradient(to bottom, rgba(255,255,255,0.2), rgba(255,255,255,0.05));
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-zinc-700 selection:text-white">
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 px-6 py-5 flex items-center justify-between pointer-events-none mix-blend-difference">
+        <div class="pointer-events-auto">
+            <a href="#section-0" onclick="scrollToIndex(0)" class="text-sm font-semibold tracking-tight transition text-white hover:text-gray-300">
+                SC.
+            </a>
+        </div>
+        <nav class="pointer-events-auto hidden md:flex items-center gap-8">
+            <a href="#section-1" onclick="scrollToIndex(1)" class="text-xs font-medium transition-colors text-gray-400 hover:text-white">About</a>
+            <a href="#section-2" onclick="scrollToIndex(2)" class="text-xs font-medium transition-colors text-gray-400 hover:text-white">Case Studies</a>
+            <a href="#section-3" onclick="scrollToIndex(3)" class="text-xs font-medium transition-colors text-gray-400 hover:text-white">Skills</a>
+            <a href="#section-4" onclick="scrollToIndex(4)" class="text-xs font-medium transition-colors text-gray-400 hover:text-white">Contact</a>
+        </nav>
+        <div class="pointer-events-auto">
+            <a href="mailto:saagar.chandiramani@gmail.com" class="text-xs font-medium border px-4 py-2 rounded-full transition-all text-white border-white/20 hover:bg-white hover:text-black">
+                Get in touch
+            </a>
+        </div>
+    </header>
+
+    <!-- Side Navigation -->
+    <div class="fixed right-6 top-1/2 -translate-y-1/2 z-50 flex-col gap-4 pointer-events-auto hidden md:flex">
+        <button onclick="scrollToIndex(0)" class="nav-dot rounded-full bg-zinc-600 active" aria-label="Hero"></button>
+        <button onclick="scrollToIndex(1)" class="nav-dot rounded-full bg-zinc-600" aria-label="About"></button>
+        <button onclick="scrollToIndex(2)" class="nav-dot rounded-full bg-zinc-600" aria-label="Work"></button>
+        <button onclick="scrollToIndex(3)" class="nav-dot rounded-full bg-zinc-600" aria-label="Skills"></button>
+        <button onclick="scrollToIndex(4)" class="nav-dot rounded-full bg-zinc-600" aria-label="Contact"></button>
+    </div>
+
+    <!-- Main Scroll Container -->
+    <main id="main-scroll" class="scroll-container no-scrollbar relative z-10">
+
+        <!-- SECTION 0: HERO -->
+        <section id="section-0" class="h-screen w-full relative snap-center overflow-hidden flex items-center justify-center bg-[#09090b]">
+            <div class="absolute inset-0 z-0 bg-grid opacity-30"></div>
+
+            <div class="relative z-20 max-w-4xl mx-auto px-6 w-full text-center">
+                <div class="space-y-8 animate-on-scroll animate">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border backdrop-blur-sm border-gray-800 bg-gray-900/50">
+                        <span class="relative flex h-2 w-2">
+                          <span class="animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 bg-blue-400"></span>
+                          <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                        </span>
+                        <span class="text-xs font-medium text-gray-400">Available for new opportunities</span>
+                    </div>
+
+                    <h1 class="text-5xl md:text-7xl font-semibold tracking-tighter leading-[1.1] text-white">
+                        Saagar Chandiramani
+                    </h1>
+
+                    <h2 class="text-2xl md:text-4xl font-medium tracking-tight max-w-2xl mx-auto leading-snug text-gray-400">
+                        Operations leader who builds <span class="text-gray-200">AI-powered systems</span> that scale human judgment.
+                    </h2>
+
+                    <p class="text-sm md:text-base text-gray-500 font-normal">
+                        Director of Operations at Raina Music. Previously Music Supervisor. NYU grad.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6">
+                        <button onclick="scrollToIndex(2)" class="btn-primary px-6 py-3 rounded-full text-sm font-medium w-full sm:w-auto">
+                            View Case Studies
+                        </button>
+
+                        <a href="resume.pdf" class="btn-secondary px-6 py-3 rounded-full text-sm font-medium flex items-center gap-2 w-full sm:w-auto justify-center group">
+                            <i data-lucide="download" class="w-4 h-4 group-hover:text-white transition text-gray-400"></i>
+                            Download Resume
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-[#09090b] to-transparent z-10"></div>
+        </section>
+
+        <!-- SECTION 1: ABOUT -->
+        <section id="section-1" class="h-screen w-full relative snap-center flex items-center bg-[#09090b]">
+            <div class="max-w-6xl mx-auto px-6 w-full grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
+
+                <!-- Left: Bio -->
+                <div class="md:col-span-5 space-y-8 animate-on-scroll">
+                    <h3 class="text-xs uppercase tracking-widest text-gray-500 font-semibold">About Me</h3>
+                    <p class="text-xl md:text-2xl font-light leading-relaxed text-gray-300">
+                        I'm an operations leader with 5+ years building systems at <a href="https://rainamusic.com" target="_blank" class="text-white hover:underline">Raina Music</a>, a premium B2B music curation service for high-end hospitality venues like TAO Group, Kimpton Hotels, and Din Tai Fung.
+                    </p>
+                    <p class="text-base leading-relaxed text-gray-400">
+                        My work sits at the intersection of product, engineering, and operations. I ship production code in React/TypeScript/Node, use LLMs strategically to automate workflows, and build systems that reduce manual effort while preserving human judgment where it matters.
+                    </p>
+
+                    <div class="p-6 rounded-xl border bg-gray-900/50 border-gray-800">
+                        <h4 class="text-sm font-medium mb-2 text-white">What I'm looking for</h4>
+                        <p class="text-sm leading-relaxed text-gray-400">
+                            Roles where I can combine product thinking, technical building, and operational excellence. PM, Solutions Architect, Product Ops, or Chief of Staff positions where building is as important as managing.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Right: Timeline -->
+                <div class="md:col-span-6 md:col-start-7 animate-on-scroll delay-100">
+                    <h3 class="text-xs uppercase tracking-widest text-gray-500 font-semibold mb-8">Career at Raina</h3>
+
+                    <div class="relative pl-6 space-y-10 timeline-line">
+                        <div class="relative">
+                            <div class="absolute -left-[29px] top-1.5 h-3.5 w-3.5 rounded-full border-2 bg-[#09090b] z-10 border-white"></div>
+                            <div class="flex flex-col sm:flex-row sm:items-baseline justify-between mb-1">
+                                <h4 class="text-lg font-medium tracking-tight text-white">Director of Operations</h4>
+                                <span class="text-xs text-gray-500 font-mono">2024 — Present</span>
+                            </div>
+                            <p class="text-sm mb-2 text-gray-400">Raina Music</p>
+                            <p class="text-sm text-gray-500 leading-relaxed">Leading operations, product development, and technical initiatives. Built gemini-music-classifier and work-smarter OS.</p>
+                        </div>
+
+                        <div class="relative">
+                            <div class="absolute -left-[29px] top-1.5 h-3.5 w-3.5 rounded-full border-2 bg-[#09090b] z-10 border-gray-700"></div>
+                            <div class="flex flex-col sm:flex-row sm:items-baseline justify-between mb-1">
+                                <h4 class="text-base font-medium tracking-tight text-gray-300">Director of Music Programming</h4>
+                                <span class="text-xs text-gray-500 font-mono">2021 — 2024</span>
+                            </div>
+                            <p class="text-sm text-gray-500 mb-2">Raina Music</p>
+                            <p class="text-sm text-gray-600">Scaled music programming operations from startup to enterprise clients.</p>
+                        </div>
+
+                        <div class="relative">
+                            <div class="absolute -left-[29px] top-1.5 h-3.5 w-3.5 rounded-full border-2 bg-[#09090b] z-10 border-gray-800"></div>
+                            <div class="flex flex-col sm:flex-row sm:items-baseline justify-between mb-1">
+                                <h4 class="text-base font-medium tracking-tight text-gray-300">Music Supervisor</h4>
+                                <span class="text-xs text-gray-500 font-mono">2019 — 2021</span>
+                            </div>
+                            <p class="text-sm text-gray-500 mb-2">Raina Music</p>
+                        </div>
+
+                        <div class="relative">
+                            <div class="absolute -left-[29px] top-1.5 h-3.5 w-3.5 rounded-full border-2 bg-[#09090b] z-10 border-gray-800"></div>
+                            <div class="flex flex-col sm:flex-row sm:items-baseline justify-between mb-1">
+                                <h4 class="text-base font-medium tracking-tight text-gray-300">New York University</h4>
+                                <span class="text-xs text-gray-500 font-mono">2015 — 2019</span>
+                            </div>
+                            <p class="text-sm text-gray-500">BA Individualized Study, Cum Laude (3.8 GPA)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: CASE STUDIES -->
+        <section class="snap-center flex bg-[#09090b] w-full h-screen relative items-center justify-center" id="section-2">
+            <div class="max-w-7xl mx-auto px-6 w-full">
+                <div class="mb-12 animate-on-scroll">
+                    <h2 class="md:text-4xl text-3xl font-semibold text-white tracking-tighter">Case Studies</h2>
+                    <p class="text-gray-500 mt-2">Projects where I combined product thinking, technical execution, and operational excellence.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+                    <!-- Card 1: gemini-music-classifier -->
+                    <a href="case-studies/gemini-music-classifier.html" class="glass-card rounded-2xl p-8 flex flex-col justify-between h-[320px] animate-on-scroll delay-100 group cursor-pointer">
+                        <div>
+                            <div class="flex items-start justify-between mb-6">
+                                <div class="p-3 rounded-lg border group-hover:text-white transition-colors bg-gray-900 border-gray-800 text-gray-400">
+                                    <i data-lucide="music-2" class="w-6 h-6"></i>
+                                </div>
+                                <i data-lucide="arrow-up-right" class="w-5 h-5 group-hover:text-white transition-colors text-gray-600"></i>
+                            </div>
+                            <h3 class="text-xl font-medium tracking-tight mb-2 text-white">gemini-music-classifier</h3>
+                            <p class="text-sm text-gray-400">Built a full-stack AI classification system in 10 days that reduced manual curation time by 40x.</p>
+                        </div>
+                        <div>
+                            <div class="h-px w-full mb-4 bg-gray-800"></div>
+                            <div class="flex items-center gap-2">
+                                <span class="text-2xl font-semibold tracking-tight text-blue-400">40x</span>
+                                <span class="text-xs text-gray-500 uppercase tracking-wide">Faster Classification</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Card 2: Work-Smarter OS -->
+                    <a href="case-studies/work-smarter-os.html" class="glass-card rounded-2xl p-8 flex flex-col justify-between h-[320px] animate-on-scroll delay-200 group cursor-pointer">
+                        <div>
+                            <div class="flex items-start justify-between mb-6">
+                                <div class="p-3 rounded-lg border group-hover:text-white transition-colors bg-gray-900 border-gray-800 text-gray-400">
+                                    <i data-lucide="bot" class="w-6 h-6"></i>
+                                </div>
+                                <i data-lucide="arrow-up-right" class="w-5 h-5 group-hover:text-white transition-colors text-gray-600"></i>
+                            </div>
+                            <h3 class="text-xl font-medium tracking-tight mb-2 text-white">Work-Smarter OS</h3>
+                            <p class="text-sm text-gray-400">AI-powered operating system that processes 40+ calls/month and generates actionable intelligence.</p>
+                        </div>
+                        <div>
+                            <div class="h-px w-full mb-4 bg-gray-800"></div>
+                            <div class="flex items-center gap-2">
+                                <span class="text-2xl font-semibold tracking-tight text-blue-400">60+</span>
+                                <span class="text-xs text-gray-500 uppercase tracking-wide">Calls Processed</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Card 3: Q1 Goal Framework -->
+                    <a href="case-studies/q1-goal-framework.html" class="glass-card rounded-2xl p-8 flex flex-col justify-between h-[320px] animate-on-scroll delay-300 group cursor-pointer">
+                        <div>
+                            <div class="flex items-start justify-between mb-6">
+                                <div class="p-3 rounded-lg border group-hover:text-white transition-colors bg-gray-900 border-gray-800 text-gray-400">
+                                    <i data-lucide="target" class="w-6 h-6"></i>
+                                </div>
+                                <i data-lucide="arrow-up-right" class="w-5 h-5 group-hover:text-white transition-colors text-gray-600"></i>
+                            </div>
+                            <h3 class="text-xl font-medium tracking-tight mb-2 text-white">Q1 Goal Framework</h3>
+                            <p class="text-sm text-gray-400">Applied Molly Graham's framework to align a distributed team around 3 measurable goals.</p>
+                        </div>
+                        <div>
+                            <div class="h-px w-full mb-4 bg-gray-800"></div>
+                            <div class="flex items-center gap-2">
+                                <span class="text-2xl font-semibold tracking-tight text-blue-400">3</span>
+                                <span class="text-xs text-gray-500 uppercase tracking-wide">Measurable Goals</span>
+                            </div>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: SKILLS -->
+        <section id="section-3" class="h-screen w-full relative snap-center flex items-center justify-center bg-[#09090b]">
+            <div class="max-w-5xl mx-auto px-6 w-full animate-on-scroll">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24">
+
+                    <!-- Left Column -->
+                    <div class="space-y-12">
+                        <div>
+                            <div class="flex items-center gap-3 mb-6 text-gray-100">
+                                <i data-lucide="code-2" class="w-5 h-5 text-gray-500"></i>
+                                <h3 class="text-lg font-medium tracking-tight">Technical</h3>
+                            </div>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1.5 rounded-md border text-xs bg-gray-900 border-gray-800 text-gray-400">React</span>
+                                <span class="px-3 py-1.5 rounded-md border text-xs bg-gray-900 border-gray-800 text-gray-400">TypeScript</span>
+                                <span class="px-3 py-1.5 rounded-md border text-xs bg-gray-900 border-gray-800 text-gray-400">Node.js</span>
+                                <span class="px-3 py-1.5 rounded-md border text-xs bg-gray-900 border-gray-800 text-gray-400">PostgreSQL</span>
+                                <span class="px-3 py-1.5 rounded-md border text-xs bg-gray-900 border-gray-800 text-gray-400">Vercel</span>
+                                <span class="px-3 py-1.5 rounded-md border text-xs bg-gray-900 border-gray-800 text-gray-400">Prisma</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex items-center gap-3 mb-6 text-gray-100">
+                                <i data-lucide="cpu" class="w-5 h-5 text-gray-500"></i>
+                                <h3 class="text-lg font-medium tracking-tight">AI/ML</h3>
+                            </div>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1.5 rounded-md border text-xs bg-gray-900 border-gray-800 text-gray-400">Gemini API</span>
+                                <span class="px-3 py-1.5 rounded-md border text-xs bg-gray-900 border-gray-800 text-gray-400">Prompt Engineering</span>
+                                <span class="px-3 py-1.5 rounded-md border text-xs bg-gray-900 border-gray-800 text-gray-400">Multi-model Orchestration</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column -->
+                    <div class="space-y-12">
+                        <div>
+                            <div class="flex items-center gap-3 mb-6 text-gray-100">
+                                <i data-lucide="workflow" class="w-5 h-5 text-gray-500"></i>
+                                <h3 class="text-lg font-medium tracking-tight">Operations</h3>
+                            </div>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1.5 rounded-md border text-xs bg-gray-900 border-gray-800 text-gray-400">Notion</span>
+                                <span class="px-3 py-1.5 rounded-md border text-xs bg-gray-900 border-gray-800 text-gray-400">Linear</span>
+                                <span class="px-3 py-1.5 rounded-md border text-xs bg-gray-900 border-gray-800 text-gray-400">HubSpot</span>
+                                <span class="px-3 py-1.5 rounded-md border text-xs bg-gray-900 border-gray-800 text-gray-400">GitHub Actions</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex items-center gap-3 mb-6 text-gray-100">
+                                <i data-lucide="users" class="w-5 h-5 text-gray-500"></i>
+                                <h3 class="text-lg font-medium tracking-tight">Leadership</h3>
+                            </div>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1.5 rounded-md border text-xs bg-gray-900 border-gray-800 text-gray-400">Cross-functional Teams</span>
+                                <span class="px-3 py-1.5 rounded-md border text-xs bg-gray-900 border-gray-800 text-gray-400">Customer Empathy</span>
+                                <span class="px-3 py-1.5 rounded-md border text-xs bg-gray-900 border-gray-800 text-gray-400">0-to-1 Execution</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: CONTACT -->
+        <section id="section-4" class="h-screen w-full relative snap-center flex flex-col justify-between bg-[#09090b]">
+            <div class="flex-1 flex items-center justify-center w-full">
+                <div class="max-w-2xl mx-auto px-6 text-center animate-on-scroll">
+                    <h2 class="text-4xl md:text-5xl font-semibold tracking-tighter mb-6 text-white">
+                        Get in Touch
+                    </h2>
+                    <p class="text-gray-500 text-lg mb-10 max-w-lg mx-auto">
+                        Interested in working together? I'd love to hear from you.
+                    </p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                        <a href="mailto:saagar.chandiramani@gmail.com" class="btn-primary px-8 py-4 rounded-full text-base font-medium flex items-center gap-2">
+                            <i data-lucide="mail" class="w-4 h-4"></i>
+                            Email Me
+                        </a>
+                        <a href="https://linkedin.com/in/saagar-chandiramani" target="_blank" class="btn-secondary px-8 py-4 rounded-full text-base font-medium flex items-center gap-2">
+                            <i data-lucide="linkedin" class="w-4 h-4"></i>
+                            LinkedIn
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <footer class="w-full border-t py-8 border-gray-900">
+                <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between text-xs text-gray-600">
+                    <div>Saagar Chandiramani</div>
+                    <div class="flex items-center gap-6 mt-4 md:mt-0">
+                        <span>New York, NY</span>
+                        <a href="#section-0" onclick="scrollToIndex(0)" class="transition flex items-center gap-1 hover:text-gray-400">
+                            Back to Top <i data-lucide="arrow-up" class="w-3 h-3"></i>
+                        </a>
+                    </div>
+                </div>
+            </footer>
+        </section>
+
+    </main>
+
+    <script>
+        lucide.createIcons({ attrs: { 'stroke-width': 1.5 } });
+
+        const observerOptions = { threshold: 0.15 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("animate");
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll(".animate-on-scroll").forEach((el) => {
+            observer.observe(el);
+        });
+
+        const dots = document.querySelectorAll('.nav-dot');
+
+        function scrollToIndex(index) {
+            const section = document.getElementById(`section-${index}`);
+            section.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        const sectionObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.id;
+                    const index = parseInt(id.split('-')[1]);
+
+                    dots.forEach((dot, i) => {
+                        if (i === index) {
+                            dot.classList.add('active');
+                            dot.classList.remove('bg-zinc-600');
+                        } else {
+                            dot.classList.remove('active');
+                            dot.classList.add('bg-zinc-600');
+                        }
+                    });
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('section').forEach(section => {
+            sectionObserver.observe(section);
+        });
+    </script>
+
+</body>
+</html>

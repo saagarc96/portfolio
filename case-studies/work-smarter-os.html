@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work-Smarter OS | Saagar Chandiramani</title>
+    <meta name="description" content="Built an AI-powered operating system that processes 40+ calls/month and generates actionable intelligence.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                fontFamily: { sans: ['Inter', 'sans-serif'] },
+                extend: { colors: { background: '#09090b', surface: '#18181b', border: '#27272a' } }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #09090b; color: #e4e4e7; -webkit-font-smoothing: antialiased; }
+        .glass-card { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); }
+    </style>
+</head>
+<body class="antialiased min-h-screen">
+    <main class="max-w-3xl mx-auto px-6 py-16">
+        <!-- Back Link -->
+        <a href="../index.html#section-2" class="inline-flex items-center gap-2 text-sm text-gray-400 hover:text-white transition-colors mb-12">
+            <i data-lucide="arrow-left" class="w-4 h-4"></i>
+            Back to projects
+        </a>
+
+        <!-- Header -->
+        <header class="mb-12">
+            <div class="flex items-center gap-3 mb-4">
+                <span class="text-sm text-gray-500 font-mono">2024 - Present</span>
+                <span class="px-2 py-0.5 text-xs bg-blue-500/20 text-blue-400 rounded-full">60+ calls processed</span>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-semibold tracking-tight text-white mb-4">
+                Work-Smarter OS
+            </h1>
+            <p class="text-xl text-gray-400">
+                Built an AI-powered operating system that processes 40+ calls/month and generates actionable intelligence.
+            </p>
+        </header>
+
+        <!-- Problem -->
+        <section class="mb-12">
+            <h2 class="text-xl font-semibold text-white mb-4">Problem</h2>
+            <ul class="space-y-3 text-gray-400">
+                <li class="flex items-start gap-3">
+                    <span class="text-gray-600 mt-1.5">-</span>
+                    High volume of customer and internal calls with insights scattered across notes
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="text-gray-600 mt-1.5">-</span>
+                    Manual todo tracking made it easy to drop balls on follow-ups
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="text-gray-600 mt-1.5">-</span>
+                    CEO needed visibility into operations without micromanaging
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="text-gray-600 mt-1.5">-</span>
+                    No systematic way to extract product feedback or track relationship dynamics
+                </li>
+            </ul>
+        </section>
+
+        <!-- Solution -->
+        <section class="mb-12">
+            <h2 class="text-xl font-semibold text-white mb-4">Solution</h2>
+            <p class="text-gray-400 mb-6">
+                Built a personal operating system using Claude Code that automates call processing, extracts intelligence, and maintains a living operational dashboard.
+            </p>
+            <ul class="space-y-3 text-gray-400">
+                <li class="flex items-start gap-3">
+                    <span class="text-gray-600 mt-1.5">-</span>
+                    <span><strong class="text-gray-200">Call ingestion pipeline:</strong> 15-20 seconds per call to extract todos, generate summaries, and update dashboards</span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="text-gray-600 mt-1.5">-</span>
+                    <span><strong class="text-gray-200">Specialized agents:</strong> Todo-extractor, quick-summary, product-intelligence, relationship-analyzer</span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="text-gray-600 mt-1.5">-</span>
+                    <span><strong class="text-gray-200">Weekly batch analysis:</strong> Strategic patterns, feature request aggregation, relationship tracking</span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="text-gray-600 mt-1.5">-</span>
+                    <span><strong class="text-gray-200">COCKPIT.md:</strong> Living operational dashboard with priorities, active threads, and session logs</span>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Impact -->
+        <section class="mb-12">
+            <h2 class="text-xl font-semibold text-white mb-6">Impact</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="glass-card rounded-xl p-4">
+                    <p class="text-2xl font-semibold text-white">60+</p>
+                    <p class="text-sm text-gray-400">Transcripts processed</p>
+                    <p class="text-xs text-gray-600 mt-1">With structured intel</p>
+                </div>
+                <div class="glass-card rounded-xl p-4">
+                    <p class="text-2xl font-semibold text-white">15-20s</p>
+                    <p class="text-sm text-gray-400">Per-call processing</p>
+                    <p class="text-xs text-gray-600 mt-1">Todos + summary</p>
+                </div>
+                <div class="glass-card rounded-xl p-4">
+                    <p class="text-2xl font-semibold text-white">Auto</p>
+                    <p class="text-sm text-gray-400">Feature aggregation</p>
+                    <p class="text-xs text-gray-600 mt-1">With priority signals</p>
+                </div>
+                <div class="glass-card rounded-xl p-4">
+                    <p class="text-2xl font-semibold text-white">100%</p>
+                    <p class="text-sm text-gray-400">Context restoration</p>
+                    <p class="text-xs text-gray-600 mt-1">Across sessions</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Systems Built -->
+        <section class="mb-12">
+            <h2 class="text-xl font-semibold text-white mb-4">Systems Built</h2>
+            <ul class="space-y-3 text-gray-400">
+                <li class="flex items-start gap-3">
+                    <span class="text-gray-600 mt-1.5">-</span>
+                    <span><strong class="text-gray-200">/ingest-transcript:</strong> Fast per-call processing with todo extraction and summary generation</span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="text-gray-600 mt-1.5">-</span>
+                    <span><strong class="text-gray-200">/weekly-call-review:</strong> Batch analysis with 4 parallel agents for strategic insights</span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="text-gray-600 mt-1.5">-</span>
+                    <span><strong class="text-gray-200">HubSpot to Sheets automation:</strong> Replaced Zapier with direct API integration</span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="text-gray-600 mt-1.5">-</span>
+                    <span><strong class="text-gray-200">Managing-up workflow:</strong> Reduces sync meetings while maintaining CEO visibility</span>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Technologies -->
+        <section>
+            <h2 class="text-xl font-semibold text-white mb-4">Technologies</h2>
+            <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1.5 rounded-md border text-xs bg-gray-900 border-gray-800 text-gray-400">Claude Code</span>
+                <span class="px-3 py-1.5 rounded-md border text-xs bg-gray-900 border-gray-800 text-gray-400">GitHub Actions</span>
+                <span class="px-3 py-1.5 rounded-md border text-xs bg-gray-900 border-gray-800 text-gray-400">Markdown</span>
+                <span class="px-3 py-1.5 rounded-md border text-xs bg-gray-900 border-gray-800 text-gray-400">HubSpot API</span>
+                <span class="px-3 py-1.5 rounded-md border text-xs bg-gray-900 border-gray-800 text-gray-400">Google Sheets API</span>
+                <span class="px-3 py-1.5 rounded-md border text-xs bg-gray-900 border-gray-800 text-gray-400">Fireflies</span>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        lucide.createIcons({ attrs: { 'stroke-width': 1.5 } });
+    </script>
+</body>
+</html>

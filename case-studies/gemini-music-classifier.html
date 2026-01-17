@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gemini-music-classifier | Saagar Chandiramani</title>
+    <meta name="description" content="Built a full-stack AI classification system in 10 days that reduced manual curation time by 40x.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                fontFamily: { sans: ['Inter', 'sans-serif'] },
+                extend: { colors: { background: '#09090b', surface: '#18181b', border: '#27272a' } }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #09090b; color: #e4e4e7; -webkit-font-smoothing: antialiased; }
+        .glass-card { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); }
+    </style>
+</head>
+<body class="antialiased min-h-screen">
+    <main class="max-w-3xl mx-auto px-6 py-16">
+        <!-- Back Link -->
+        <a href="../index.html#section-2" class="inline-flex items-center gap-2 text-sm text-gray-400 hover:text-white transition-colors mb-12">
+            <i data-lucide="arrow-left" class="w-4 h-4"></i>
+            Back to projects
+        </a>
+
+        <!-- Header -->
+        <header class="mb-12">
+            <div class="flex items-center gap-3 mb-4">
+                <span class="text-sm text-gray-500 font-mono">2024</span>
+                <span class="px-2 py-0.5 text-xs bg-blue-500/20 text-blue-400 rounded-full">40x faster</span>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-semibold tracking-tight text-white mb-4">
+                gemini-music-classifier
+            </h1>
+            <p class="text-xl text-gray-400">
+                Built a full-stack AI classification system in 10 days that reduced manual curation time by 40x.
+            </p>
+        </header>
+
+        <!-- Problem -->
+        <section class="mb-12">
+            <h2 class="text-xl font-semibold text-white mb-4">Problem</h2>
+            <ul class="space-y-3 text-gray-400">
+                <li class="flex items-start gap-3">
+                    <span class="text-gray-600 mt-1.5">-</span>
+                    Curators spent 3-4 hours manually classifying 200 songs
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="text-gray-600 mt-1.5">-</span>
+                    Subjective criteria across 189 subgenres made consistency difficult
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="text-gray-600 mt-1.5">-</span>
+                    Classification bottleneck was limiting client onboarding scale
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="text-gray-600 mt-1.5">-</span>
+                    No standardized process for handling edge cases or new genres
+                </li>
+            </ul>
+        </section>
+
+        <!-- Solution -->
+        <section class="mb-12">
+            <h2 class="text-xl font-semibold text-white mb-4">Solution</h2>
+            <p class="text-gray-400 mb-6">
+                Built a multi-model AI pipeline with a React curator interface that automates the heavy lifting while preserving human judgment for edge cases.
+            </p>
+            <ul class="space-y-3 text-gray-400">
+                <li class="flex items-start gap-3">
+                    <span class="text-gray-600 mt-1.5">-</span>
+                    <span><strong class="text-gray-200">Multi-model AI pipeline:</strong> Gemini Flash for classification, Parallel AI for audio analysis, Spotify API for metadata enrichment</span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="text-gray-600 mt-1.5">-</span>
+                    <span><strong class="text-gray-200">React curator interface:</strong> Kanban workflow for review, batch operations, and quality control</span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="text-gray-600 mt-1.5">-</span>
+                    <span><strong class="text-gray-200">Production-ready:</strong> Auth, rate limiting, connection pooling, duplicate detection</span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="text-gray-600 mt-1.5">-</span>
+                    <span><strong class="text-gray-200">17KB classification prompt:</strong> Comprehensive edge case handling across 189 subgenres</span>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Impact -->
+        <section class="mb-12">
+            <h2 class="text-xl font-semibold text-white mb-6">Impact</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="glass-card rounded-xl p-4">
+                    <p class="text-2xl font-semibold text-white">40x</p>
+                    <p class="text-sm text-gray-400">Faster classification</p>
+                    <p class="text-xs text-gray-600 mt-1">5-10 min vs 3-4 hours</p>
+                </div>
+                <div class="glass-card rounded-xl p-4">
+                    <p class="text-2xl font-semibold text-white">+4-8%</p>
+                    <p class="text-sm text-gray-400">Accuracy improvement</p>
+                    <p class="text-xs text-gray-600 mt-1">After Gemini 3 Flash</p>
+                </div>
+                <div class="glass-card rounded-xl p-4">
+                    <p class="text-2xl font-semibold text-white">50%</p>
+                    <p class="text-sm text-gray-400">Cost reduction</p>
+                    <p class="text-xs text-gray-600 mt-1">Via batch API</p>
+                </div>
+                <div class="glass-card rounded-xl p-4">
+                    <p class="text-2xl font-semibold text-white">10 days</p>
+                    <p class="text-sm text-gray-400">End-to-end build</p>
+                    <p class="text-xs text-gray-600 mt-1">Concept to production</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Details -->
+        <section class="mb-12">
+            <h2 class="text-xl font-semibold text-white mb-4">Technical Details</h2>
+            <ul class="space-y-3 text-gray-400">
+                <li class="flex items-start gap-3">
+                    <span class="text-gray-600 mt-1.5">-</span>
+                    <span><strong class="text-gray-200">Scale:</strong> 20+ API endpoints, 75+ React components, ~50K LOC</span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="text-gray-600 mt-1.5">-</span>
+                    <span><strong class="text-gray-200">Database:</strong> Prisma ORM + PostgreSQL with 13 strategic indexes</span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="text-gray-600 mt-1.5">-</span>
+                    <span><strong class="text-gray-200">Infrastructure:</strong> Serverless on Vercel with connection pooling</span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="text-gray-600 mt-1.5">-</span>
+                    <span><strong class="text-gray-200">AI:</strong> Custom prompts with confidence scoring and fallback logic</span>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Technologies -->
+        <section>
+            <h2 class="text-xl font-semibold text-white mb-4">Technologies</h2>
+            <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1.5 rounded-md border text-xs bg-gray-900 border-gray-800 text-gray-400">Next.js</span>
+                <span class="px-3 py-1.5 rounded-md border text-xs bg-gray-900 border-gray-800 text-gray-400">TypeScript</span>
+                <span class="px-3 py-1.5 rounded-md border text-xs bg-gray-900 border-gray-800 text-gray-400">PostgreSQL</span>
+                <span class="px-3 py-1.5 rounded-md border text-xs bg-gray-900 border-gray-800 text-gray-400">Prisma</span>
+                <span class="px-3 py-1.5 rounded-md border text-xs bg-gray-900 border-gray-800 text-gray-400">Gemini API</span>
+                <span class="px-3 py-1.5 rounded-md border text-xs bg-gray-900 border-gray-800 text-gray-400">TailwindCSS</span>
+                <span class="px-3 py-1.5 rounded-md border text-xs bg-gray-900 border-gray-800 text-gray-400">Vercel</span>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        lucide.createIcons({ attrs: { 'stroke-width': 1.5 } });
+    </script>
+</body>
+</html>
