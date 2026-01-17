@@ -7,10 +7,9 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  // For GitHub Pages deployment (username.github.io)
-  // If deploying to a subpath like username.github.io/portfolio, add:
-  // basePath: "/portfolio",
-  // assetPrefix: "/portfolio",
+  // For GitHub Pages deployment at username.github.io/portfolio
+  basePath: "/portfolio",
+  assetPrefix: "/portfolio",
 };
 
 // withContentCollections must be the outermost plugin
